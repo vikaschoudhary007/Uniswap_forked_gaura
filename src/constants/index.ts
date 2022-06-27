@@ -9,11 +9,11 @@ import {
 } from '../connectors';
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
-export const FACTORY_ADDRESS = '0x6Bd5A1A63ffF10De3c6B7C667040E9AE1B47fDf2';
-export const ROUTER_ADDRESS = '0xA4E1f3fD10E2397f58926E215Ed331D7cDA14056';
+export const FACTORY_ADDRESS = '0x399aD46cC12DD3b11eC7cAc6b544AaC9e3b90FE3';
+export const ROUTER_ADDRESS = '0xAC0BF7672920b8af57E11b525697a44e814624c3';
 
-export const LP_TOKEN_NAME = 'Swap-LP-Token';
-export const LP_TOKEN_SYMBOL = 'SWAP-LP';
+export const LP_TOKEN_NAME = 'Gaura-LP';
+export const LP_TOKEN_SYMBOL = 'GAURA-LP';
 
 // a list of tokens by chain
 type ChainTokenList = {
@@ -50,6 +50,7 @@ const WETH_ONLY: ChainTokenList = {
   [ChainId.RINKEBY]: [WETH[ChainId.RINKEBY]],
   [ChainId.GÖRLI]: [WETH[ChainId.GÖRLI]],
   [ChainId.KOVAN]: [WETH[ChainId.KOVAN]],
+  [ChainId.GAURA]: [WETH[ChainId.GAURA]],
 };
 
 // used to construct intermediary pairs for trading
@@ -82,6 +83,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.RINKEBY]: [...WETH_ONLY[ChainId.RINKEBY]],
   [ChainId.GÖRLI]: [...WETH_ONLY[ChainId.GÖRLI]],
   [ChainId.KOVAN]: [...WETH_ONLY[ChainId.KOVAN]],
+  [ChainId.GAURA]: [...WETH_ONLY[ChainId.GAURA]],
 };
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {

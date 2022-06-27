@@ -23,6 +23,7 @@ const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   4: 'rinkeby.',
   5: 'goerli.',
   42: 'kovan.',
+  33982: 'testnet-explorer.',
 };
 
 export function getEtherscanLink(
@@ -30,7 +31,11 @@ export function getEtherscanLink(
   data: string,
   type: 'transaction' | 'token' | 'address' | 'block'
 ): string {
-  const prefix = `https://${ETHERSCAN_PREFIXES[chainId] || ETHERSCAN_PREFIXES[1]}etherscan.io`;
+  let prefix = `https://${ETHERSCAN_PREFIXES[chainId] || ETHERSCAN_PREFIXES[1]}etherscan.io`;
+
+  if (chainId === 33982){
+    prefix = `https://${ETHERSCAN_PREFIXES[chainId]}gaurascan.com`;
+  }
 
   switch (type) {
     case 'transaction': {
